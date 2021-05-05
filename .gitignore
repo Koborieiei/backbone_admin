@@ -1,5 +1,6 @@
-/ckeditor
-/PHPExcel
-/PHPMailer
-/plugins
-/mpdf2
+ckeditor/
+PHPExcel/
+PHPMailer/
+plugins/
+mpdf2/
+.DS_Store
