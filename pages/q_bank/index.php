@@ -1,4 +1,4 @@
-<?php session_start();
+ x<?php session_start();
 @$skill_id = $_GET['skill_id']==null?"null":$_GET['skill_id'];
 @$skill_name = $_GET['skill_name']==null?"All":$_GET['skill_name'];
 ?>
@@ -89,11 +89,15 @@
                             <div class="row">
                               <div class="col-md-12">
                                 <div class="form-group">
-                                
+
                                   <label>Import Csv file</label>
                         
                                   <div class="box-body">
-                                        <form action="ajax/AEDModuleUpload.php" class="dropzone" id="dropzoneFrom" enctype="multipart/form-data"></form>
+                                  <a href="example.csv" download>***Example csv format***</a>
+
+                                        <form action="ajax/AEDModuleUpload.php" class="dropzone" id="dropzoneFrom" enctype="multipart/form-data">
+                                        <input type="hidden" name="action" value="addfile">
+                                        </form>
                                           <script>
                                             Dropzone.options.dropzoneFrom = {
                                             autoProcessQueue: false,
@@ -109,7 +113,9 @@
                                               submitButton.addEventListener("click", function(){
                                                 myDropzone.processQueue();
                                               });
-                                              this.on("complete", function( file ){
+                                              this.on("success", function( file ,response ){
+                                                console.log(response);
+
                                                 if(this.getQueuedFiles().length == 0)
                                                   {
                                                   var _this = this;
@@ -121,11 +127,16 @@
                                                     barColor: '#fff',
                                                     content: 'Loading...'
                                                   });
+                                                 
                                                   setTimeout(function(){
                                                     $.smkProgressBar({status:'end'});
+                                                    $("#dropzoneFrom").smkClear();
                                                     showTable();
                                                     showSlidebar();
-
+                                                    $.smkAlert({ text: response.message, type: response.status });
+                                                    $("#myModal").modal("toggle");
+                                                    $("#uploadform").hide();
+                                                  
                                                   }, 1000);
 
                                                   }
@@ -147,6 +158,7 @@
                       </div>
                     
                     </div>
+
                     <form id="formAddModule" data-smk-icon="glyphicon-remove-sign" novalidate enctype="multipart/form-data">
                       <div id="show-form"></div>
                     </form>
