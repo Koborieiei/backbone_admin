@@ -3,5 +3,5 @@ PHPExcel/
 PHPMailer/
 plugins/
 Classes/
-mpdf2/
+mpdf2/ 
 .DS_Store
