@@ -1,0 +1,37 @@
+.dialog-full-wigth{
+  width: 100%;
+  margin: 0;
+}
+
+.modal-full{
+  height: calc(100vh - 154px);
+  overflow: scroll;
+}
+
+.list-group{
+  position: relative;
+  height: 185px;
+  overflow: scroll;
+  background-color: #fbfbfb;
+  border: 2px dashed #dcdcdc;
+}
+
+.list-empty{
+  height: calc(100vh - 280px);
+  overflow: scroll;
+}
+
+.selected {
+  background-color: #f9c7c8;
+  border: solid red 1px !important;
+  z-index: 1 !important;
+}
+.center-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.list-group-item{
+  cursor: pointer;
+}
