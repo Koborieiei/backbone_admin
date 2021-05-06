@@ -11,9 +11,9 @@ jobs:
    - name: 📂 Sync files
      uses: SamKirkland/FTP-Deploy-Action@4.0.0
      with:
-      server: 203.151.56.20
+      server: 203.151.56.20:21
       username: admin_edbot
       password: rbmydKN1@g8invok8
-      protocol: ftps
+      protocol: ftp
       security: strict
       port: 21 # todo replace with your web hosts ftps port
