@@ -14,4 +14,3 @@ jobs:
       ftp-server: ftp.edbot.com
       ftp-username: admin_edbot
       ftp-password: rbmydKN1@g8invok8
-      git-ftp-args: --insecure
