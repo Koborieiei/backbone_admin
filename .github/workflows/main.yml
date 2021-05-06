@@ -1,0 +1,19 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+ web-deploy:
+  name: 🎉 Deploy
+  runs-on: ubuntu-latest
+  steps:
+   - name: 🚚 Get latest code
+     uses: actions/checkout@v2.3.2
+
+   - name: 📂 Sync files
+     uses: SamKirkland/FTP-Deploy-Action@4.0.0
+     with:
+      server: 203.151.56.20
+      username: admin_edbot
+      password: rbmydKN1@g8invok8
+      protocol: ftps
+      security: strict
+      port: 21 # todo replace with your web hosts ftps port
